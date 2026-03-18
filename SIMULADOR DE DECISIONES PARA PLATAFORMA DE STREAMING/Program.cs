@@ -1,4 +1,6 @@
-﻿int opcion = 0;
+﻿using System.ComponentModel.Design;
+
+int opcion = 0;
 int totalEvaluados = 0;
 int totalPublicados = 0;
 int totalRechazados = 0;
@@ -137,7 +139,54 @@ bool validacionTecnica(string tipodecontenido, double duracionminutos, string cl
             valido = false;
         }
     }
+
+    if (tipodecontenido.ToLower() == "película" || tipodecontenido.ToLower() == "pelicula")
+    {
+        if (duracionminutos>=60 && duracionminutos<=180)
+        {
+            valido=true;
+        }
+        else
+        {
+            valido= false;
+        }
+    }
+    else if (tipodecontenido.ToLower()=="serie")
+    {
+        if (duracionminutos>=20 && duracionminutos<=90)
+        {
+            valido=true;
+        }
+        else
+        {
+            valido= false;
+        }
+    }
+    else if (tipodecontenido.ToLower()=="documental")
+    {
+        if (duracionminutos>=30 && duracionminutos<=120)
+        {
+            valido=true;
+        }
+        else
+        {
+            valido= false;
+        }
+    }
+    else if(tipodecontenido.ToLower()=="evento en vivo")
+    {
+        if (duracionminutos>=30 && duracionminutos<=240)
+        {
+            valido=true;
+        }
+        else
+        {
+            valido= false;
+        }
+
+    }
     return valido;
+
 }
 do
 {
