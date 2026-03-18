@@ -68,12 +68,12 @@ void evaluarcontenido()
     string clasificacioncontenido= Console.ReadLine();
     Console.WriteLine();
     Console.Write("Ingrese la hora programada (0-23): ");
-    int horaprogramda=int.Parse(Console.ReadLine());
+    int horaprogramada=int.Parse(Console.ReadLine());
     Console.WriteLine();
     Console.WriteLine("Ingrese el nivel de producción (Bajo, medio, alto): ");
     string niveldeproduccion=Console.ReadLine();
     Console.WriteLine();
-    registro( tipodecontenido, duracionminutos, clasificacioncontenido, horaprogramda, niveldeproduccion);
+    registro( tipodecontenido, duracionminutos, clasificacioncontenido, horaprogramada, niveldeproduccion);
     Console.WriteLine();
 }
 void registro(string tipodecontenido, double duracionminutos, string clasificacioncontenido, int horaprogramada, string niveldeproduccion)
@@ -120,10 +120,29 @@ void ReiniciarEstadisticas()
         Console.WriteLine("Reinicio cancelado.");
     }
 }
-    do
+bool validacionTecnica(string tipodecontenido, double duracionminutos, string clasificacioncontenido, int horaprogramada, string niveldeproduccion)
+{
+    bool valido = true;
+    if (clasificacioncontenido=="+13")
     {
-    Mostrarmenu();
-    switch (opcion)
+        if (horaprogramada<6 || horaprogramada>22)
+        {
+            valido=false;
+        }
+    }
+    else if (clasificacioncontenido=="+18")
+    {
+        if (horaprogramada>5 && horaprogramada<22)
+        {
+            valido = false;
+        }
+    }
+    return valido;
+}
+do
+{
+Mostrarmenu();
+switch (opcion)
     {
         case 1:
             evaluarcontenido();
