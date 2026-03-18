@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.Design;
-using System.Security.Claims;
-
-int opcion = 0;
+﻿int opcion = 0;
 int totalEvaluados = 0;
 int totalPublicados = 0;
 int totalRechazados = 0;
@@ -63,20 +60,33 @@ void evaluarcontenido()
     Console.WriteLine("Por favor, ingrese el tipo de contenido que se le solicitará:");
     Console.Write("Ingrese el tipo de contenido (Película, serie, documental, evento en vivo): ");
     string tipodecontenido = Console.ReadLine();
+    while (tipodecontenido.ToLower()!="película" && tipodecontenido.ToLower() != "pelicula" && tipodecontenido.ToLower() != "serie" && tipodecontenido.ToLower() != "documental" && tipodecontenido.ToLower() !="evemtp em vivo")
+    {
+        Console.WriteLine();
+        Console.Write("Ingrese un tipo de contenido válido (Película, serie, documental, evento en vivo): ");
+        tipodecontenido = Console.ReadLine();
+    }
     Console.WriteLine();
     Console.Write("Ingrese la duración en minutos: ");
     double duracionminutos=double.Parse(Console.ReadLine());
     Console.WriteLine();
     Console.Write("Ingrese la clasificación del contenido (Todo público, +13, +18): ");
     string clasificacioncontenido= Console.ReadLine();
-    while (clasificacioncontenido!="+13" && clasificacioncontenido.ToLower() !="+18"&&clasificacioncontenido.ToLower() !="todo publico"&& clasificacioncontenido.ToLower()!="todo público")
+    while (clasificacioncontenido.ToLower() !="+13" && clasificacioncontenido.ToLower() !="+18"&&clasificacioncontenido.ToLower() !="todo publico"&& clasificacioncontenido.ToLower()!="todo público")
     {
-        Console.WriteLine("Ingrese un nivel válido (bajo, medio, alto): ");
+        Console.WriteLine();
+        Console.Write("Ingrese una clasificación válida (Todo público, +13, +18): ");
         clasificacioncontenido = Console.ReadLine();
     }
     Console.WriteLine();
     Console.Write("Ingrese la hora programada (0-23): ");
     int horaprogramada=int.Parse(Console.ReadLine());
+    while (horaprogramada<0 || horaprogramada>23)
+    {
+        Console.WriteLine();
+        Console.Write("Ingrese una hora válida (0-23):");
+        horaprogramada = int.Parse(Console.ReadLine());
+    }
     Console.WriteLine();
     Console.Write("Ingrese el nivel de producción (Bajo, medio, alto): ");
     string niveldeproduccion=Console.ReadLine();
@@ -84,7 +94,7 @@ void evaluarcontenido()
     
     while (niveldeproduccion.ToLower() != "bajo" && niveldeproduccion.ToLower() != "medio" && niveldeproduccion.ToLower() != "alto")
     {
-        Console.WriteLine("Ingrese un nivel válido (bajo, medio, alto): ");
+        Console.Write("Ingrese un nivel válido (bajo, medio, alto): ");
         niveldeproduccion = Console.ReadLine();
     }
     Console.WriteLine();
