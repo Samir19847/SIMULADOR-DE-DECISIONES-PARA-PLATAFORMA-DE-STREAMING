@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Design;
+using System.Security.Claims;
 
 int opcion = 0;
 int totalEvaluados = 0;
@@ -24,7 +25,7 @@ void Mostrarmenu()
     Console.WriteLine("2. Mostrar reglas del sistema.");
     Console.WriteLine("3. Mostrar estadísticas de la sesión.");
     Console.WriteLine("4. Reiniciar estadísticas.");
-    Console.WriteLine("5. Salir");
+    Console.WriteLine("5. Salir.");
     Console.WriteLine("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
     Console.WriteLine();
     Console.Write("Por favor, ingrese una de las siguientes opciones del menú: ");
@@ -68,23 +69,38 @@ void evaluarcontenido()
     Console.WriteLine();
     Console.Write("Ingrese la clasificación del contenido (Todo público, +13, +18): ");
     string clasificacioncontenido= Console.ReadLine();
+    while (clasificacioncontenido!="+13" && clasificacioncontenido.ToLower() !="+18"&&clasificacioncontenido.ToLower() !="todo publico"&& clasificacioncontenido.ToLower()!="todo público")
+    {
+        Console.WriteLine("Ingrese un nivel válido (bajo, medio, alto): ");
+        clasificacioncontenido = Console.ReadLine();
+    }
     Console.WriteLine();
     Console.Write("Ingrese la hora programada (0-23): ");
     int horaprogramada=int.Parse(Console.ReadLine());
     Console.WriteLine();
-    Console.WriteLine("Ingrese el nivel de producción (Bajo, medio, alto): ");
+    Console.Write("Ingrese el nivel de producción (Bajo, medio, alto): ");
     string niveldeproduccion=Console.ReadLine();
     Console.WriteLine();
-    registro( tipodecontenido, duracionminutos, clasificacioncontenido, horaprogramada, niveldeproduccion);
+    
+    while (niveldeproduccion.ToLower() != "bajo" && niveldeproduccion.ToLower() != "medio" && niveldeproduccion.ToLower() != "alto")
+    {
+        Console.WriteLine("Ingrese un nivel válido (bajo, medio, alto): ");
+        niveldeproduccion = Console.ReadLine();
+    }
     Console.WriteLine();
+    registro(tipodecontenido, duracionminutos, clasificacioncontenido, horaprogramada, niveldeproduccion);
+    Console.WriteLine();
+
 }
 void registro(string tipodecontenido, double duracionminutos, string clasificacioncontenido, int horaprogramada, string niveldeproduccion)
 {
+    Console.WriteLine("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
     Console.WriteLine($"Tipo de contenido: {tipodecontenido}");
     Console.WriteLine($"Duración: {duracionminutos} minutos");
     Console.WriteLine($"Clasificación: {clasificacioncontenido}");
     Console.WriteLine($"Hora programada: {horaprogramada}:00 hrs");
     Console.WriteLine($"Nivel producción: {niveldeproduccion}");
+    Console.WriteLine("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
 }
 void estadisticas()
 {
@@ -125,16 +141,16 @@ void ReiniciarEstadisticas()
 bool validacionTecnica(string tipodecontenido, double duracionminutos, string clasificacioncontenido, int horaprogramada, string niveldeproduccion)
 {
     bool valido = true;
-    if (clasificacioncontenido=="+13")
+    if (clasificacioncontenido == "+13")
     {
-        if (horaprogramada<6 || horaprogramada>22)
+        if (horaprogramada < 6 || horaprogramada > 22)
         {
-            valido=false;
+            valido = false;
         }
     }
-    else if (clasificacioncontenido=="+18")
+    else if (clasificacioncontenido == "+18")
     {
-        if (horaprogramada>5 && horaprogramada<22)
+        if (horaprogramada > 5 && horaprogramada < 22)
         {
             valido = false;
         }
@@ -142,51 +158,41 @@ bool validacionTecnica(string tipodecontenido, double duracionminutos, string cl
 
     if (tipodecontenido.ToLower() == "película" || tipodecontenido.ToLower() == "pelicula")
     {
-        if (duracionminutos>=60 && duracionminutos<=180)
+        if (!(duracionminutos >= 60 && duracionminutos <= 180))
         {
-            valido=true;
-        }
-        else
-        {
-            valido= false;
+            valido = false;
         }
     }
-    else if (tipodecontenido.ToLower()=="serie")
+    else if (tipodecontenido.ToLower() == "serie")
     {
-        if (duracionminutos>=20 && duracionminutos<=90)
+        if (!(duracionminutos >= 20 && duracionminutos <= 90))
         {
-            valido=true;
-        }
-        else
-        {
-            valido= false;
+            valido = false;
         }
     }
-    else if (tipodecontenido.ToLower()=="documental")
+    else if (tipodecontenido.ToLower() == "documental")
     {
-        if (duracionminutos>=30 && duracionminutos<=120)
+        if (!(duracionminutos >= 30 && duracionminutos <= 120))
         {
-            valido=true;
-        }
-        else
-        {
-            valido= false;
+            valido = false;
         }
     }
-    else if(tipodecontenido.ToLower()=="evento en vivo")
+    else if (tipodecontenido.ToLower() == "evento en vivo")
     {
-        if (duracionminutos>=30 && duracionminutos<=240)
+        if (!(duracionminutos >= 30 && duracionminutos <= 240))
         {
-            valido=true;
+            valido = false;
         }
-        else
-        {
-            valido= false;
-        }
+    }
 
+    if (niveldeproduccion.ToLower() == "bajo")
+    {
+        if (!(clasificacioncontenido== "todo publico" || clasificacioncontenido == "todo público" || clasificacioncontenido == "+13"))
+        {
+            valido = false;
+        }
     }
     return valido;
-
 }
 do
 {
