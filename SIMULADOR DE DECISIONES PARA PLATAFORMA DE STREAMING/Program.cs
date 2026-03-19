@@ -226,7 +226,9 @@ switch (opcion)
             Console.WriteLine("Cerrando programa..."); return;
             break;
         default:
-            Console.WriteLine("Opción inválida");
+            Console.WriteLine("Opción inválida.");
+            Console.WriteLine("Por favor, escoga una de las opciones del menú.");
+            Console.WriteLine();
             break;
     }
 } while (opcion != 5);
