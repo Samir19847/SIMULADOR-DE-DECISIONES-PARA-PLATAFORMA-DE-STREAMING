@@ -29,7 +29,6 @@ void Mostrarmenu()
     Console.WriteLine("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
     Console.WriteLine();
     Console.Write("Por favor, ingrese una de las siguientes opciones del menú: ");
-    Console.Write("Por favor, ingrese una opción: ");
     while (!int.TryParse(Console.ReadLine(), out opcion) || opcion < 1 || opcion > 5)
     {
         Console.Write("Ingrese una opción válida (1-5): ");
@@ -111,13 +110,13 @@ Console.WriteLine();
 }
 void registro(string tipodecontenido, double duracionminutos, string clasificacioncontenido, int horaprogramada, string niveldeproduccion)
 {
-    Console.WriteLine("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+    Console.WriteLine("-_-_-_-_-_-_-_-_-_-_ CONTENIDO REGISTRADO -_-_-_-_-_-_-_-_-_-_-_");
     Console.WriteLine($"Tipo de contenido: {tipodecontenido}");
     Console.WriteLine($"Duración: {duracionminutos} minutos");
     Console.WriteLine($"Clasificación: {clasificacioncontenido}");
     Console.WriteLine($"Hora programada: {horaprogramada}:00 hrs");
     Console.WriteLine($"Nivel producción: {niveldeproduccion}");
-    Console.WriteLine("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+    Console.WriteLine("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
 }
 void estadisticas()
 {
