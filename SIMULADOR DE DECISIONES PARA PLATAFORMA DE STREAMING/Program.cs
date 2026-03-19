@@ -149,10 +149,10 @@ void estadisticas()
     Console.WriteLine($"Porcentaje de aprobación: {porcentaje}%");
     Console.WriteLine();
     Console.WriteLine("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+    Console.WriteLine();
 }
 void ReiniciarEstadisticas()
 {
-    Console.WriteLine();
     Console.Write("¿Confirmar reinicio de estadísticas? (s/n): ");
     string respuesta = Console.ReadLine().ToLower();
 
@@ -168,10 +168,12 @@ void ReiniciarEstadisticas()
         impactoBajocontador = 0;
 
         Console.WriteLine("Estadísticas reiniciadas correctamente.");
+        Console.WriteLine();
     }
     else
     {
         Console.WriteLine("Reinicio cancelado.");
+        Console.WriteLine();
     }
 }
 bool validacionTecnica(string tipodecontenido, double duracionminutos, string clasificacioncontenido, int horaprogramada, string niveldeproduccion)
