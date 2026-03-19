@@ -101,7 +101,9 @@ void evaluarcontenido()
     Console.WriteLine();
     registro(tipodecontenido, duracionminutos, clasificacioncontenido, horaprogramada, niveldeproduccion);
     Console.WriteLine();
-
+    Console.WriteLine("A continuación verá la decisión final según los resultados de su evaluación de contenido:");
+    decisionFinal(tipodecontenido, duracionminutos, clasificacioncontenido, horaprogramada, niveldeproduccion);
+Console.WriteLine();
 }
 void registro(string tipodecontenido, double duracionminutos, string clasificacioncontenido, int horaprogramada, string niveldeproduccion)
 {
