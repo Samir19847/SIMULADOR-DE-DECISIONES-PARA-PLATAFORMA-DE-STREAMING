@@ -205,6 +205,23 @@ bool validacionTecnica(string tipodecontenido, double duracionminutos, string cl
     }
     return valido;
 }
+string clasificacionimpacto(string niveldeproduccion, double duracionminutos, int horaprogramada)
+{
+    string impacto = "Bajo";
+    if (niveldeproduccion == "alto" || duracionminutos > 120 || horaprogramada >= 20 && horaprogramada <= 23)
+    {
+        impacto = "Alto";
+    }
+    else if (niveldeproduccion == "medio" || duracionminutos >= 60 && duracionminutos <= 120)
+    {
+        impacto = "Medio";
+    }
+    else if (niveldeproduccion == "bajo" && duracionminutos < 60)
+    {
+        impacto = "Bajo";
+    }
+    return impacto;
+}
 do
 {
 Mostrarmenu();
