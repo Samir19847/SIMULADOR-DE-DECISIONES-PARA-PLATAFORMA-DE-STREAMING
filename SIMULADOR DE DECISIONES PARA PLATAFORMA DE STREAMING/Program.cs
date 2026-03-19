@@ -1,4 +1,6 @@
-﻿int opcion;
+﻿using System.Reflection;
+
+int opcion;
 int totalEvaluados = 0;
 int totalPublicados = 0;
 int totalRechazados = 0;
@@ -302,7 +304,8 @@ switch (opcion)
             ReiniciarEstadisticas();
             break;
         case 5:
-            Console.WriteLine("Cerrando programa..."); return;
+            Console.WriteLine("Cerrando programa...");
+            Console.WriteLine();
             break;
         default:
             Console.WriteLine("Opción inválida.");
@@ -311,3 +314,45 @@ switch (opcion)
             break;
     }
 } while (opcion != 5);
+
+int estrellitas;
+bool valido = true;
+do {
+    Console.Write("¿Cuántas estrellas le agregaría a la sesión? (1-5):");
+    if (!int.TryParse(Console.ReadLine(), out estrellitas))
+    {
+        Console.WriteLine();
+        Console.WriteLine("Por favor ingrese un número entero.");
+        valido = false;
+        Console.WriteLine();
+    }
+    else if (estrellitas < 0)
+    {
+        Console.WriteLine();
+        Console.WriteLine("Por favor ingrese un número entero positivo mayor a 0.");
+        valido= false;
+        Console.WriteLine();
+    }
+    else if (estrellitas>6)
+    {
+        Console.WriteLine();
+        Console.WriteLine("Valoración fuera de rango.");
+        Console.WriteLine("Por favor, ingrese un número positivo entre 1 y 5, como se le menciono antes.");
+        valido = false;
+        Console.WriteLine();
+    }
+    else if (estrellitas>=1 && estrellitas<=5)
+    {
+        valido = true;
+    }
+} while (!valido);
+for (int i = 1; i <= estrellitas; i++)
+{
+    for (int j = 1; j <= i; j++)
+    {
+        Console.Write("* ");
+    }
+    Console.WriteLine();
+}
+Console.WriteLine("Valoración registrada.");
+Console.WriteLine("¡Gracias por su valoración!"); return;
