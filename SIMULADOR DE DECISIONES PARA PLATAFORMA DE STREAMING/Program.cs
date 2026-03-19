@@ -222,6 +222,45 @@ string clasificacionimpacto(string niveldeproduccion, double duracionminutos, in
     }
     return impacto;
 }
+void decisionFinal(string tipodecontenido, double duracionminutos, string clasificacioncontenido, int horaprogramda, string niveldeproduccion)
+{
+    totalEvaluados++;
+    bool valido=validacionTecnica(tipodecontenido, duracionminutos, clasificacioncontenido, horaprogramda, tipodecontenido);
+    if (!valido)
+    {
+        Console.WriteLine("Resultado: Rechazado (Incumple alguna regla obligatoria)");
+        totalRechazados++; return;
+    }
+
+    string impacto = clasificacionimpacto(niveldeproduccion, duracionminutos, horaprogramda);
+    Console.WriteLine($"El impacto calculado es: {impacto}");
+    if (impacto == "Alto")
+    {
+        impactoAltocontador++;
+    }
+    else if (impacto == "Medio")
+    {
+        impactoMediocontador++;
+    }
+    else
+    {
+        impactoBajocontador++;
+    }
+
+    if (impacto=="Bajo" ||impacto=="Alto")
+    {
+        Console.WriteLine("Resultado: Publicado.");
+        Console.WriteLine("Cumple con todas las reglas técnicas.");
+        totalPublicados++;
+    }
+    else if (impacto=="Alto")
+    {
+        Console.WriteLine("Resultado: Enviar a revisión.");
+        Console.WriteLine("Cumple reglas técnicas, pero requiere modificación menor.");
+        totalEnRevision++;
+    }
+}
+
 do
 {
 Mostrarmenu();
