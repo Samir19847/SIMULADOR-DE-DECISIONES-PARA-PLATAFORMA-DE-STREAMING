@@ -222,17 +222,17 @@ string clasificacionimpacto(string niveldeproduccion, double duracionminutos, in
     }
     return impacto;
 }
-void decisionFinal(string tipodecontenido, double duracionminutos, string clasificacioncontenido, int horaprogramda, string niveldeproduccion)
+void decisionFinal(string tipodecontenido, double duracionminutos, string clasificacioncontenido, int horaprogramada, string niveldeproduccion)
 {
     totalEvaluados++;
-    bool valido=validacionTecnica(tipodecontenido, duracionminutos, clasificacioncontenido, horaprogramda, tipodecontenido);
+    bool valido=validacionTecnica(tipodecontenido, duracionminutos, clasificacioncontenido, horaprogramada, niveldeproduccion);
     if (!valido)
     {
         Console.WriteLine("Resultado: Rechazado (Incumple alguna regla obligatoria)");
         totalRechazados++; return;
     }
 
-    string impacto = clasificacionimpacto(niveldeproduccion, duracionminutos, horaprogramda);
+    string impacto = clasificacionimpacto(niveldeproduccion, duracionminutos, horaprogramada);
     Console.WriteLine($"El impacto calculado es: {impacto}");
     if (impacto == "Alto")
     {
