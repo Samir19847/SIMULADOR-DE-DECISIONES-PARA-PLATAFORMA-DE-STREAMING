@@ -10,9 +10,12 @@ int impactoBajocontador = 0;
 void mostrarbienvenida()
 {
     Console.WriteLine();
-    Console.WriteLine("-_-_-_-_-_-_-_-_ SIMULADOR DE DECISIONES PARA PLATAFORMA DE STREAMING -_-_-_-_-_-_-_-_");
-    Console.WriteLine("-_-_-_-_-_-_-_-_-_-_-_-_-_-_- Universidad Rafael Landívar -_-_-_-_-_-_-_-_-_-_-_-_-_-_");
-    Console.WriteLine("-_-_-_-_-_-_-_-_-_-_-_-_-_- Identidad Jesuita en Guatemala -_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+    Console.WriteLine("-_-_-_-_-_-_-_-_ SIMULADOR DE DECISIONES PARA PLATAFORMA DE STREAMING -_-_-_-_-_-_-_-_-");
+    Console.WriteLine("-_-_-_-_-_-_-_-_-_ Evaluación, Validación y Publicación de Contenido -_-_-_-_-_-_-_-_-_");
+    Console.WriteLine("-_-_-_-_-_-_-_-_-_    Donde el contenido se convierte en impacto -_-_-_-_-_-_-_-_-_-_-_");
+    Console.WriteLine("                              Samir corp || StreamDash 1,984                       ");
+    Console.WriteLine();
+
     Console.WriteLine();
 }
 void Mostrarmenu()
