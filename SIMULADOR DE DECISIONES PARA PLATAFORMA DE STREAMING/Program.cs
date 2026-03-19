@@ -122,7 +122,7 @@ void registro(string tipodecontenido, double duracionminutos, string clasificaci
 }
 void estadisticas()
 {
-    Console.WriteLine("_-_-_-_-ESTADÍSTICAS DE LA SESIÓN_-_-_-_-");
+    Console.WriteLine("_-_-_-_- ESTADÍSTICAS DE LA SESIÓN _-_-_-_-");
     Console.WriteLine();
     Console.WriteLine($"Total evaluados: {totalEvaluados}");
     Console.WriteLine($"Publicados: {totalPublicados}");
@@ -148,7 +148,38 @@ void estadisticas()
     }
     Console.WriteLine($"Porcentaje de aprobación: {porcentaje}%");
     Console.WriteLine();
-    Console.WriteLine("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+    Console.WriteLine("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
+    Console.WriteLine();
+}
+void resumenfinal()
+{
+    Console.WriteLine("_-_-_-_- RESUMEN FINAL _-_-_-_-");
+    Console.WriteLine();
+    Console.WriteLine($"Total evaluados: {totalEvaluados}");
+    Console.WriteLine($"Publicados: {totalPublicados}");
+    Console.WriteLine($"Rechazados: {totalRechazados}");
+    Console.WriteLine($"Enviados a revisión: {totalEnRevision}");
+    Console.WriteLine($"Publicados con ajustes: {totalConAjustes}");
+    if (impactoAltocontador > impactoBajocontador && impactoAltocontador > impactoMediocontador)
+    {
+        Console.WriteLine($"Impacto predominante: Alto, con {impactoAltocontador} unidades.");
+    }
+    else if (impactoMediocontador > impactoBajocontador && impactoMediocontador > impactoAltocontador)
+    {
+        Console.WriteLine($"Impacto predominante: Medio, con {impactoMediocontador} unidades.");
+    }
+    else if (impactoBajocontador > impactoMediocontador && impactoBajocontador > impactoAltocontador)
+    {
+        Console.WriteLine($"Impacto predominante: Bajo, con {impactoBajocontador} unidades.");
+    }
+    double porcentaje = 0;
+    if (totalEvaluados > 0)
+    {
+        porcentaje = (double)totalPublicados / totalEvaluados * 100;
+    }
+    Console.WriteLine($"Porcentaje de aprobación: {porcentaje}%");
+    Console.WriteLine();
+    Console.WriteLine("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
     Console.WriteLine();
 }
 void ReiniciarEstadisticas()
@@ -306,6 +337,7 @@ switch (opcion)
             ReiniciarEstadisticas();
             break;
         case 5:
+            resumenfinal();
             Console.WriteLine("Cerrando programa...");
             Console.WriteLine();
             break;
