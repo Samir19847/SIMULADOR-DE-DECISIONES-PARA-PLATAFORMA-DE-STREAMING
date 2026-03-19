@@ -230,7 +230,7 @@ void decisionFinal(string tipodecontenido, double duracionminutos, string clasif
     bool valido=validacionTecnica(tipodecontenido, duracionminutos, clasificacioncontenido, horaprogramada, niveldeproduccion);
     if (!valido)
     {
-        Console.WriteLine("Resultado: Rechazado (Incumple alguna regla obligatoria)");
+        Console.WriteLine("Resultado: Rechazado (Incumple alguna regla obligatoria).");
         totalRechazados++; return;
     }
 
