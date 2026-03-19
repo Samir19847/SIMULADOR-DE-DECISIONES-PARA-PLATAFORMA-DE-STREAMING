@@ -127,6 +127,18 @@ void estadisticas()
     Console.WriteLine($"Rechazados: {totalRechazados}");
     Console.WriteLine($"Enviados a revisión: {totalEnRevision}");
     Console.WriteLine($"Publicados con ajustes: {totalConAjustes}");
+    if (impactoAltocontador>impactoBajocontador&&impactoAltocontador>impactoMediocontador)
+    {
+        Console.WriteLine($"Impacto predominante: Alto, con {impactoAltocontador} unidades.");
+    }
+    else if (impactoMediocontador>impactoBajocontador && impactoMediocontador > impactoAltocontador)
+    {
+        Console.WriteLine($"Impacto predominante: Medio, con {impactoMediocontador} unidades.");
+    }
+    else if (impactoBajocontador>impactoMediocontador && impactoBajocontador > impactoAltocontador)
+    {
+        Console.WriteLine($"Impacto predominante: Bajo, con {impactoBajocontador} unidades.");
+    }
     double porcentaje = 0;
     if (totalEvaluados > 0)
     {
