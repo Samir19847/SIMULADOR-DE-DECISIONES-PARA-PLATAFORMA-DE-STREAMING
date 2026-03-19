@@ -127,6 +127,12 @@ void estadisticas()
     Console.WriteLine($"Rechazados: {totalRechazados}");
     Console.WriteLine($"Enviados a revisión: {totalEnRevision}");
     Console.WriteLine($"Publicados con ajustes: {totalConAjustes}");
+    double porcentaje = 0;
+    if (totalEvaluados > 0)
+    {
+        porcentaje = (double)totalPublicados / totalEvaluados * 100;
+    }
+    Console.WriteLine($"Porcentaje de aprobación: {porcentaje}%");
     Console.WriteLine();
     Console.WriteLine("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
 }
