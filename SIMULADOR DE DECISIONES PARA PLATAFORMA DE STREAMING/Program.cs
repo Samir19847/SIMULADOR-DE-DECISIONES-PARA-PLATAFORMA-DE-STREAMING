@@ -39,7 +39,7 @@ void reglas()
 {
     Console.WriteLine("-_-_-_-_-_-_-_-_-_- Reglas de clasificación _-_-_-_-_-_-_-_-_-_");
     Console.WriteLine();
-    Console.WriteLine("-_-_Reglas de clasificación y horario_-_-");
+    Console.WriteLine("-_-_ Reglas de clasificación y horario _-_-");
     Console.WriteLine("* Todo público: cualquier hora *");
     Console.WriteLine("* +13: entre 6 y 22 horas *");
     Console.WriteLine("* +18: entre 22 y 5 horas *");
@@ -53,8 +53,8 @@ void reglas()
     Console.WriteLine("-_-_-_-_-_--_-_-_-_-_--_-_-_-_-_--_-_-");
     Console.WriteLine();
     Console.WriteLine("-_-_-_-_-_-_-_-_-_-_ Reglas de producción _-_-_-_-_-_-_-_-_-_-_");
-    Console.WriteLine("* Producción baja solo válida para Todo público o +13*");
-    Console.WriteLine("* Producción medio o altá valida para cualqueir clasificación *");
+    Console.WriteLine("* Producción baja solo válida para Todo público o +13 *");
+    Console.WriteLine("* Producción medio o altá valida para cualquier clasificación *");
     Console.WriteLine("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
     Console.WriteLine();
     Console.WriteLine("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
