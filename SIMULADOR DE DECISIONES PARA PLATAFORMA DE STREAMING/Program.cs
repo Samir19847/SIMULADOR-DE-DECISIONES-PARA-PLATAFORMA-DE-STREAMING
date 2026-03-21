@@ -65,11 +65,11 @@ void evaluarcontenido()
 {
     Console.WriteLine("Por favor, ingrese el tipo de contenido que se le solicitará:");
     Console.Write("Ingrese el tipo de contenido (Película, serie, documental, evento en vivo): ");
-    string tipodecontenido = Console.ReadLine();
-    while (tipodecontenido.ToLower()!="película" && tipodecontenido.ToLower() != "pelicula" && tipodecontenido.ToLower() != "serie" && tipodecontenido.ToLower() != "documental" && tipodecontenido.ToLower() !="evemtp em vivo")
+    string tipodecontenido = Console.ReadLine().ToLower();
+    while (tipodecontenido.ToLower()!="película" && tipodecontenido.ToLower() != "pelicula" && tipodecontenido.ToLower() != "serie" && tipodecontenido.ToLower() != "documental" && tipodecontenido.ToLower() !="Evento en vivo")
     {
         Console.Write("Ingrese un tipo de contenido válido (Película, serie, documental, evento en vivo): ");
-        tipodecontenido = Console.ReadLine();
+        tipodecontenido = Console.ReadLine().ToLower();
     }
     Console.WriteLine();
     Console.Write("Ingrese la duración en minutos: ");
@@ -80,11 +80,11 @@ void evaluarcontenido()
     }
     Console.WriteLine();
     Console.Write("Ingrese la clasificación del contenido (Todo público, +13, +18): ");
-    string clasificacioncontenido= Console.ReadLine();
+    string clasificacioncontenido= Console.ReadLine().ToLower();
     while (clasificacioncontenido.ToLower() !="+13" && clasificacioncontenido.ToLower() !="+18"&&clasificacioncontenido.ToLower() !="todo publico"&& clasificacioncontenido.ToLower()!="todo público")
     {
         Console.Write("Ingrese una clasificación válida (Todo público, +13, +18): ");
-        clasificacioncontenido = Console.ReadLine();
+        clasificacioncontenido = Console.ReadLine().ToLower();
     }
     Console.WriteLine();
     Console.Write("Ingrese la hora programada (0-23): ");
@@ -95,11 +95,11 @@ void evaluarcontenido()
     }
     Console.WriteLine();
     Console.Write("Ingrese el nivel de producción (Bajo, medio, alto): ");
-    string niveldeproduccion=Console.ReadLine();
+    string niveldeproduccion=Console.ReadLine().ToLower();
     while (niveldeproduccion.ToLower() != "bajo" && niveldeproduccion.ToLower() != "medio" && niveldeproduccion.ToLower() != "alto")
     {
         Console.Write("Ingrese un nivel válido (bajo, medio, alto): ");
-        niveldeproduccion = Console.ReadLine();
+        niveldeproduccion = Console.ReadLine().ToLower();
     }
     Console.WriteLine();
     registro(tipodecontenido, duracionminutos, clasificacioncontenido, horaprogramada, niveldeproduccion);
@@ -303,7 +303,7 @@ void decisionFinal(string tipodecontenido, double duracionminutos, string clasif
         impactoBajocontador++;
     }
 
-    if (impacto=="Bajo" ||impacto=="Alto")
+    if (impacto=="Bajo" ||impacto=="Medio")
     {
         Console.WriteLine("Resultado: Publicado.");
         Console.WriteLine("Cumple con todas las reglas técnicas.");
