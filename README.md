@@ -18,29 +18,23 @@ A partir de estas variables, el sistema determina automáticamente:
 Además, mantiene estadísticas en tiempo real y genera un resumen final al finalizar la sesión.
 
 Características principales: 
-*Validación técnica completa (reglas obligatorias). 
-*Clasificación de impacto (Bajo, Medio, Alto). 
-*Sistema de decisiones automatizado. 
-*Control de errores en entrada de datos (TryParse). 
-*Estadísticas dinámicas de la sesión. 
-*Identificación de impacto predominante. 
-*Cálculo de porcentaje de aprobación.
+-Validación técnica completa (reglas obligatorias). 
+-Clasificación de impacto (Bajo, Medio, Alto). 
+-Sistema de decisiones automatizado. 
+-Control de errores en entrada de datos (TryParse). 
+-Estadísticas dinámicas de la sesión. 
+-Identificación de impacto predominante. 
+-Cálculo de porcentaje de aprobación.
 
-🖥️ Ejecución Requisitos: 
-.NET SDK 6.0 o superior.
+🖥️ Ejecución 
+Requisitos: 
+-.NET SDK 6.0 o superior.
+-Conexión a internet para descargar el repositorio desde GitHub.
 
 PASOS PARA EJECUTARLO:
+-Verificar instalación de .NET
+Abrir la terminal correspondiente a tu sistema operativo:
 
--Descargar el programa.
-Entrar al repositorio de GitHub: github.com/Samir19847/SIMULADOR-DE-DECISIONES-PARA-PLATAFORMA-DE-STREAMING y hacer click en el botón verde que dice "Code" → "Download ZIP". Descomprimir la carpeta donde quieras.
-
--Entrar a la carpeta principal del proyecto.
-Abrir la carpeta descomprimida, luego entrar a la carpeta "SIMULADOR DE DECISIONES PARA PLATAFORMA DE STREAMING".
-
--Copiar la ruta de la carpeta del proyecto.  
-Hacer click en la barra de direcciones del explorador de archivos (donde aparece la ruta), copia la dirección completa.
-
--Abrir La Terminanl/Símbolo del sistema/CMD.
 Windows:
 Opción 1: Presionar la tecla con el logo de Windows + R, escribir cmd y presionar Enter.
 Opción 2: Buscar "Símbolo del sistema"/"CMD" en el menú Inicio
@@ -54,12 +48,27 @@ Opción 1: Presionar Ctrl + Alt + T.
 Opción 2: Buscar "Terminal" en tu menú de aplicaciones.
 Opción 3: Hacer click derecho en el escritorio y seleccionar "Abrir terminal aquí"
 
--Ejecutar el programa. 
-Pega la dirección de la carpeta en el CMD con el comando:
+Escribir:
+dotnet --version
+Si aparece un número como 6.0.x, ya está instalado. Si da error, descárgalo gratis en dotnet.microsoft.com.
+
+-Descargar el programa.
+Entrar al repositorio de GitHub: github.com/Samir19847/SIMULADOR-DE-DECISIONES-PARA-PLATAFORMA-DE-STREAMING y hacer click en el botón verde que dice "Code" → "Download ZIP". Descomprimir la carpeta donde quieras.
+
+-Entrar a la carpeta principal del proyecto.
+Abrir la carpeta descomprimida, luego entrar a la carpeta "SIMULADOR DE DECISIONES PARA PLATAFORMA DE STREAMING".
+
+-Copiar la ruta de la carpeta del proyecto.  
+Hacer click en la barra de direcciones del explorador de archivos (donde aparece la ruta), copia la dirección completa.
+
+-Entrar en la ruta de la carpeta en la terminar. 
+Pega la dirección de la carpeta en la terminal correspondiente a tu sistema operativo con el comando:
 cd "C:\Ruta\Donde\Descomprimiste\SIMULADOR DE DECISIONES PARA PLATAFORMA DE STREAMING"
 Es decir:
 cd "Pegar la ruta de la carpeta"
-Ejecutar el comando:
+
+-Ejecutar el programa.
+Ejecutar el dicho programa con el comando:
 dotnet run
 
 🧩 Lógica del sistema
@@ -74,7 +83,7 @@ Bajo / Medio / Alto.
 Decisión final: Alto → En revisión.
 Medio/Bajo → Publicado.
 
-📊 Estadísticas El sistema registra: 
+📊 Estadísticas que el sistema registra: 
 -Total evaluados. 
 -Publicados. 
 -Rechazados. 
