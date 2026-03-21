@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-int opcion;
+﻿int opcion;
 int totalEvaluados = 0;
 int totalPublicados = 0;
 int totalRechazados = 0;
@@ -351,8 +349,9 @@ switch (opcion)
 
 int estrellitas;
 bool valido = true;
-do {
-    Console.Write("¿Cuántas estrellas le agregaría a la sesión? (1-5):");
+do
+{
+    Console.Write("¿Cuántas estrellas le daría a esta sesión? (0–5): ");
     if (!int.TryParse(Console.ReadLine(), out estrellitas))
     {
         Console.WriteLine();
@@ -380,6 +379,7 @@ do {
         valido = true;
     }
 } while (!valido);
+Console.WriteLine();
 for (int i = 1; i <= estrellitas; i++)
 {
     for (int j = 1; j <= i; j++)
@@ -388,5 +388,6 @@ for (int i = 1; i <= estrellitas; i++)
     }
     Console.WriteLine();
 }
+Console.WriteLine();
 Console.WriteLine("Valoración registrada.");
 Console.WriteLine("¡Gracias por su valoración!"); return;
