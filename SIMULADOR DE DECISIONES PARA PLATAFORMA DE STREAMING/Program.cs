@@ -66,7 +66,7 @@ void evaluarcontenido()
     Console.WriteLine("Por favor, ingrese el tipo de contenido que se le solicitará:");
     Console.Write("Ingrese el tipo de contenido (Película, serie, documental, evento en vivo): ");
     string tipodecontenido = Console.ReadLine().ToLower();
-    while (tipodecontenido.ToLower()!="película" && tipodecontenido.ToLower() != "pelicula" && tipodecontenido.ToLower() != "serie" && tipodecontenido.ToLower() != "documental" && tipodecontenido.ToLower() !="Evento en vivo")
+    while (tipodecontenido.ToLower()!="película" && tipodecontenido.ToLower() != "pelicula" && tipodecontenido.ToLower() != "serie" && tipodecontenido.ToLower() != "documental" && tipodecontenido.ToLower() !="evento en vivo")
     {
         Console.Write("Ingrese un tipo de contenido válido (Película, serie, documental, evento en vivo): ");
         tipodecontenido = Console.ReadLine().ToLower();
