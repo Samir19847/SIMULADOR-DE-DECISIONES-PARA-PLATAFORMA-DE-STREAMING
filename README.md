@@ -2,7 +2,7 @@ StreamDash 1,984 — Simulador de Decisiones para Plataforma de Streaming
 
 🧠Descripción del sistema
 
-StreamDash es un sistema de consola desarrollado en C# que simula el proceso de toma de decisiones en una plataforma de streaming. 
+StreamDash 1,984 es un sistema de consola desarrollado en C# que simula el proceso de toma de decisiones en una plataforma de streaming. 
 El sistema evalúa contenido en base a: 
 -Tipo de contenido. 
 -Duración. 
@@ -29,17 +29,38 @@ Características principales:
 🖥️ Ejecución Requisitos: 
 .NET SDK 6.0 o superior.
 
-PASOS:
+PASOS PARA EJECUTARLO:
 
--Clonar repositorio.
-git clone https://github.com/Samir19847/SIMULADOR-DE-DECISIONES-PARA-PLATAFORMA-DE-STREAMING.git
+-Descargar el programa.
+Entrar al repositorio de GitHub: github.com/Samir19847/SIMULADOR-DE-DECISIONES-PARA-PLATAFORMA-DE-STREAMING y hacer click en el botón verde que dice "Code" → "Download ZIP". Descomprimir la carpeta donde quieras.
 
--Entrar a la carpeta principal del proyecto. 
-cd SIMULADOR-DE-DECISIONES-PARA-PLATAFORMA-DE-STREAMING-master
+-Entrar a la carpeta principal del proyecto.
+Abrir la carpeta descomprimida, luego entrar a la carpeta "SIMULADOR DE DECISIONES PARA PLATAFORMA DE STREAMING".
 
--Entrar a la carpeta del proyecto. 
-cd "SIMULADOR DE DECISIONES PARA PLATAFORMA DE STREAMING"
-Ejecutar dotnet run.
+-Copiar la ruta de la carpeta del proyecto.  
+Hacer click en la barra de direcciones del explorador de archivos (donde aparece la ruta), copia la dirección completa.
+
+-Abrir La Terminanl/Símbolo del sistema/CMD.
+Windows:
+Opción 1: Presionar la tecla con el logo de Windows + R, escribir cmd y presionar Enter.
+Opción 2: Buscar "Símbolo del sistema"/"CMD" en el menú Inicio
+
+macOS:
+Opción 1: Abrir Spotlight con Cmd + Espacio, esscribir terminal y presionar Enter.
+Opción 2: Ir a Aplicaciones > Utilidades > Terminal.
+
+Linux:
+Opción 1: Presionar Ctrl + Alt + T.
+Opción 2: Buscar "Terminal" en tu menú de aplicaciones.
+Opción 3: Hacer click derecho en el escritorio y seleccionar "Abrir terminal aquí"
+
+-Ejecutar el programa. 
+Pega la dirección de la carpeta en el CMD con el comando:
+cd "C:\Ruta\Donde\Descomprimiste\SIMULADOR DE DECISIONES PARA PLATAFORMA DE STREAMING"
+Es decir:
+cd "Pegar la ruta de la carpeta"
+Ejecutar el comando:
+dotnet run
 
 🧩 Lógica del sistema
 
@@ -62,6 +83,6 @@ Medio/Bajo → Publicado.
 -Impacto predominante. 
 -Porcentaje de aprobación.
 
-💡 Nota: 
-Durante el desarrollo se enfrentaron varios retos relacionados con la validación de datos, especialmente en el manejo de entradas del usuario y condiciones lógicas.
-Se implementaron soluciones como el uso de "TryParse" y normalización de strings para evitar errores en tiempo de ejecución.
+💡 Manejo de errores
+
+El sistema incluye validaciones para evitar errores en la entrada de datos del usuario, utilizando herramientas como "TryParse" y normalización de texto.
